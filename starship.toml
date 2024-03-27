@@ -1,0 +1,76 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$fill\
+$cmd_duration\
+$line_break$character"""
+
+right_format = "$time"
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_fg1 = '#5E5E5E'
+color_bg0 = '#302F2E'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#6FBABE'
+color_aqua = '#89BFAE'
+color_green = '#A8CD71'
+color_orange = '#eeaa33'
+color_purple = '#EF97BF'
+color_red = '#954039'
+color_yellow = '#8a7651'
+
+
+[character]
+disabled = false
+format = "[](bold fg:color_orange) "
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+[fill]
+symbol = ' '
+
+[directory]
+format = "[$path](fg:color_aqua)($style) "
+home_symbol = " ~"
+truncation_length = 3
+truncation_symbol = "../"
+truncate_to_repo = false
+
+[git_branch]
+symbol = ""
+format = '[[ $symbol $branch](bg:color_bg0 fg:color_purple)]($style)'
+
+[git_status]
+format = '[[( $all_status$ahead_behind) ](bg:color_bg0 fg:color_purple)]($style)'
+
+[python]
+symbol = ""
+format = ' [[ $symbol( $virtualenv) ](bg:color_bg0 fg:color_green)]($style) '
+
+[nodejs]
+symbol = "󰎙"
+format = '[[ $symbol( $version) ](bg:color_bg0 fg:color_blue)]($style)'
+
+[cmd_duration]
+style = "yellow bold"
+format = "[󰔚 $duration]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg1)]($style)'
