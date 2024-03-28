@@ -6,6 +6,9 @@ set PATH $HOME/.local/bin $PATH
 set PATH /usr/local/go/bin $PATH
 set PATH /home/linuxbrew/.linuxbrew/bin $PATH
 
+# Remove underline on paths
+set -Ux fish_color_valid_path
+
 set -Ux VIRTUALFISH_DEFAULT_PYTHON python3
 set -Ux VIRTUALFISH_HOME ~/.venvs
 
@@ -41,5 +44,15 @@ function fish_greeting
     echo "Let's get shit done!"
 end
 
+function transient_prompt_func
+    if test $transient_pipestatus[-1] -eq 0
+        printf (set_color green)' '
+    else
+        printf (set_color red)' '
+    end
+end
+
+
 # Init starship
 starship init fish | source
+

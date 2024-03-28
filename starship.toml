@@ -2,14 +2,18 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
 $python\
 $nodejs\
+$golang\
 $fill\
 $cmd_duration\
-$line_break$character"""
+$line_break\
+$character"""
 
 right_format = "$time"
 
@@ -26,44 +30,57 @@ color_aqua = '#89BFAE'
 color_green = '#A8CD71'
 color_orange = '#eeaa33'
 color_purple = '#EF97BF'
-color_red = '#954039'
-color_yellow = '#8a7651'
+color_red = '#FF7166'
+color_yellow = '#EBD982'
 
 
 [character]
 disabled = false
-format = "[](bold fg:color_orange) "
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+format = "[󰁕](bold fg:color_orange) "
+success_symbol = '[󰁕](bold fg:color_green)'
+error_symbol = '[󰁕](bold fg:color_red)'
+vimcmd_symbol = '[󰁎](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[󰁎](bold fg:color_purple)'
+vimcmd_replace_symbol = '[󰁎](bold fg:color_purple)'
+vimcmd_visual_symbol = '[󰁎](bold fg:color_yellow)'
 
 [fill]
-symbol = ' '
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+format = "[ $ssh_symbol$hostname ](bg:color_red fg:color_fg0) "
+ssh_only = true
+
+[username]
+format = "[ ](fg:color_red) "
+show_always = false
 
 [directory]
 format = "[$path](fg:color_aqua)($style) "
 home_symbol = " ~"
 truncation_length = 3
-truncation_symbol = "../"
+truncation_symbol = " ../"
 truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-format = '[[ $symbol $branch](bg:color_bg0 fg:color_purple)]($style)'
+format = '[[$symbol $branch](fg:color_purple)]($style)'
 
 [git_status]
-format = '[[( $all_status$ahead_behind) ](bg:color_bg0 fg:color_purple)]($style)'
+format = ' [\[[($all_status$ahead_behind)\]](fg:color_red)]($style) '
 
 [python]
 symbol = ""
-format = ' [[ $symbol( $virtualenv) ](bg:color_bg0 fg:color_green)]($style) '
+format = '[[ $symbol( $virtualenv) ](bg:color_bg0 fg:color_green)]($style) '
 
 [nodejs]
 symbol = "󰎙"
 format = '[[ $symbol( $version) ](bg:color_bg0 fg:color_blue)]($style)'
+
+[golang]
+symbol = ""
+format = '[[ $symbol( $version) ](bg:color_bg0 fg:color_yellow)]($style)'
 
 [cmd_duration]
 style = "yellow bold"

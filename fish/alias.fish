@@ -13,6 +13,8 @@ alias gs="git status"
 alias bat="batcat"
 alias !="cd ~ && vf deactivate && nvm use system"
 
+abbr --add dj ./manage.py runserver 0.0.0.0:8000
+
 # Workon manager
 function wo
     if test (count $argv) -ne 1
