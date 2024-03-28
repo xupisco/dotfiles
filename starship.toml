@@ -68,6 +68,9 @@ symbol = ""
 format = '[[$symbol $branch](fg:color_purple)]($style) '
 
 [git_status]
+ahead = "󰶣"
+behind = "󰶡"
+diverged = "󰹺"
 format = '[[(\[$all_status$ahead_behind\] )](fg:color_red)]($style)'
 
 [python]
