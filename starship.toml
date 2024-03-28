@@ -64,14 +64,15 @@ truncation_symbol = " ../"
 truncate_to_repo = false
 
 [git_branch]
-symbol = ""
-format = '[[$symbol $branch](fg:color_purple)]($style) '
+symbol = ""
+format = '[[$symbol $branch](fg:color_purple)]($style)'
 
 [git_status]
-ahead = "󰶣"
-behind = "󰶡"
+modified = ""
+ahead = "󰁞"
+behind = "󰁆"
 diverged = "󰹺"
-format = '[[(\[$all_status$ahead_behind\] )](fg:color_red)]($style)'
+format = '[[($all_status$ahead_behind )](fg:color_purple)]($style)'
 
 [python]
 symbol = ""
