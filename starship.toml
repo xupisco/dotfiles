@@ -72,11 +72,13 @@ modified = ""
 ahead = "󰁞"
 behind = "󰁆"
 diverged = "󰹺"
-format = '[[($all_status$ahead_behind )](fg:color_purple)]($style)'
+deleted = "󰆴"
+untracked = ""
+format = '[[($all_status$ahead_behind)](fg:color_purple)]($style)'
 
 [python]
 symbol = ""
-format = '[[ $symbol( $virtualenv) ](bg:color_bg0 fg:color_green)]($style) '
+format = ' [[ $symbol( $virtualenv) ](bg:color_bg0 fg:color_green)]($style) '
 
 [nodejs]
 symbol = "󰎙"
