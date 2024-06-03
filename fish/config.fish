@@ -39,11 +39,6 @@ if [ -f $HOME/.config/fish/alias.fish ]
     source $HOME/.config/fish/alias.fish
 end
 
-# Fun?
-function fish_greeting
-    echo "Let's get shit done!"
-end
-
 function transient_prompt_func
     if test $transient_pipestatus[-1] -eq 0
         printf (set_color green)' '
@@ -52,6 +47,19 @@ function transient_prompt_func
     end
 end
 
+# Brew complete
+if test -d (brew --prefix)"/share/fish/completions"
+    set -p fish_complete_path (brew --prefix)/share/fish/completions
+end
+
+if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+    set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+end
+
+# Fun?
+function fish_greeting
+    echo "Let's get shit done!"
+end
 
 # Init starship
 starship init fish | source

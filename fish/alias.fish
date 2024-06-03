@@ -28,11 +28,13 @@ end
 # Projects
 alias wo_taicare="cd ~/projects/taicare && nvm use"
 alias wo_bobs="cd ~/projects/bobs_portal"
+alias wo_rir="cd ~/projects/bobs-rir"
 alias wo_qr="cd ~/projects/qrhub"
 alias wo_spa="cd ~/projects/spa_reloaded"
 
 # Projects autocomplete suggestions
 complete --command wo --exclusive --condition __fish_use_subcommand --arguments taicare --description "tai.care"
 complete --command wo --exclusive --condition __fish_use_subcommand --arguments bobs --description "Bob's"
+complete --command wo --exclusive --condition __fish_use_subcommand --arguments rir --description "Bob's Rock in Rio Promo"
 complete --command wo --exclusive --condition __fish_use_subcommand --arguments qr --description "QRhub"
 complete --command wo --exclusive --condition __fish_use_subcommand --arguments spa --description "SPA Reloaded"
